@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html manifest="demo.appcache">
+ 	<head>
+		<meta charset="utf-8">
+		<title>不良工科生的架构之路</title>
+		<link rel="stylesheet" type="text/css" href="CSS\style.css">
+		<script type="text/javascript"  src="JavaScript\pretreatment.js"></script>
+		<script type="text/javascript" src="JavaScript\treatment.js"></script>
+		<!--src="http://maps.google.com/maps/api/js?sensor=false"-->
+	</head>
+	<body onmousedown="rightKey()" onload="load()">
+		<header id="top">
+			<center>
+				<h1 id="biaoti">不良工科生的架构之路</h1>
+		  	</center>
+		  	<h5 id="vistor">
+		  		<input type="button" id="btn_checkCache" value="检查缓存" onclick="checkCache()">
+		  		<input type="button" id="btn_undataCache" value="更新缓存" onclick="updateMyCache()"><br>
+		  		总访问数：<input type="text"  id="vistorNumber" width="auto" onclick="inialVistorNumber()" ><br>
+		  		当前会话内访问数：<input type="text"  id="vistorNumberTime" width="auto" onclick="inialVistorNumberTime()" >
+		  	</h5>
+		</header>
+		<div id="container">
+			<nav id="myNav" draggable="true">
+				<p>	<MARK><b>技术分类</b></MARK></p>
+				<ul>
+					<li><a href="#theam_桌面端">桌面端</a></li>
+					<li><a href="#theam_移动端">移动端</a></li>
+					<li><a href="#theam_网页端">网页端</a></li>
+					<li><a href="#theam_服务器端">服务器端</a></li>
+					<li><a href="login.html">用户登陆界面</a></li>
+				</ul>
+				<P id="myTime">2017-11-09</P>
+			</nav> 
+			<div id="myNav2"></div>
+			<div id="myArticle">
+				<section id="theam_桌面端">
+					<HEADER>
+						<P>桌面端</P>
+					</HEADER>
+					<ul>
+					<li>C/C++</li>
+					<li>Java</li>
+					<li>VB</li>
+					</ul>
+				</section>
+				<section id="theam_移动端" >
+					<HEADER>
+						<P>移动端</P>
+					</HEADER>
+					<ul>
+					<li>Android</li>
+					<li>IOS</li>
+					</ul>
+				</section>
+				<section id="theam_网页端" >
+					<HEADER>
+						<P>网页端</P>
+					</HEADER>
+					<ul>
+					<li>HTML/XHTML/HTML5</li>
+					<li>CSS</li>
+					<li>Java Script</li>
+					<li>Node.js</li>
+					<li>PHP</li>
+					</ul>
+				</section>
+				<section id="theam_服务器端" >
+					<HEADER>
+						<P>服务器端</P>
+					</HEADER>
+					<ul>
+					<li>UNIX/Linux</li>
+					<li>SQL Sever</li>
+					<li>MySQL</li>
+					<li>MongoDB</li>
+					</ul>
+				</section>
+			</div>
+			<div id="myAside">
+				<form name="form1" method="get" action="handsome.html" target="_blank"  >
+					<table id="myTable" cellspacing=0 cellpadding="2px">
+						<tr>
+							<td  colspan="2"  bgcolor="#eeeeee">·用户登录</td>
+						</tr>
+						<tr>
+							<td width="20%" >用户名:</td>
+							<td><input type="text" name="user" id="user" width="100px" onclick="setUserName()" class="table_input"></td>
+						</tr>
+						<tr>
+							<td>密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
+							<td ><input type="password" name="pwd" id="pwd" onclick="setPassword()" class="table_input" ></td>
+						</tr>
+						<tr>
+							<td >性别：</td>
+							<td >
+								<select name="sex" id="sex" size="digit" >
+									<option>男生&nbsp;&nbsp;&nbsp;&nbsp;</option>
+									<option>女生&nbsp;&nbsp;&nbsp;&nbsp;</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="checkbox" name="checkbox1" id="checkbox1" value="Apple"> Apple&nbsp;
+								<input type="checkbox" name="checkbox2" id="checkbox2" value="Orange"> Orange&nbsp;
+								<input type="checkbox" name="checkbox3" id="checkbox3" value="Pear"> Pear&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center"><input type="button" name="Button" class="btn_grey" value="登陆" onclick="check()">
+								&nbsp;
+								<input type="reset" name="Submit2" class="btn_grey" value="重置">
+							</td>
+						</tr>
+						<tr>
+							<td  colspan="2">
+						    </td>
+						</tr>
+					</table>
+				</form>
+				<div id="myImage"><img src="CSS\ZhouJieLun2.png"></div>
+				<div id="myAudio">
+					<audio id="music"  controls="controls" onmousemove="this.play()" onmouseout="this.pause()" preload="meta" autobuffer="true">
+				    <source src="CSS\周杰伦 - 安静.wav" type="audio/wav">
+				</audio>
+				</div>
+				<button id="toggle" onclick="toggleSound()">播放</button><br>
+				<canvas id="myCanvas"></canvas>
+				<script type="text/javascript">
+					var c=document.getElementById("myCanvas");
+					var context=c.getContext("2d");
+					if (c.getContext==false) {
+						alert("你的浏览器不支持canvas元素，请更新或者更换您的浏览器。")
+					}
+					//context.moveTo(0,0);
+					//context.lineTo(200,100);
+					//context.stroke();
+					//context.fillStyle="#FF00FF";
+					//context.fillRect(0,0,200,100);
+					for(var i=0;i<20;i++){
+						context.strokeStyle="#FF00FF";
+						context.beginPath();
+						context.arc(0,100,i*5,0,Math.PI*3/2,true);
+						context.stroke();
+					}				
+				</script>
+				<div id="fibonacci">
+					请输入Fibonacci的N值：<input type="text" id="text_fibonacci">
+					<button id="btn_fibonacci" onclick="fibonacci()">计算</button>
+					<input type="text" id="result_fibonacci">
+				</div>
+			</div>
+		</div>
+		<div id="commentContainer">
+			<div id="videoArea">
+				<video id="video" width="600px" height="400px"  onmousemove="this.play()" onmouseout="this.pause()" preload="auto" autobuffer="true" controls="controls"
+					   oncanplay="startVideo()" onended="stopTimeline()">
+					<source src="CSS\video.mp4" type="video/mp4">
+				</video>
+				<canvas id="timeline" width="400px" height="300px"></canvas>
+			</div>
+			<div id="commentArea">
+				<div id="commentAreaContainer">
+					<div id="commentFormDiv">
+						<form id="commentForm">
+							<table id="commentTable" name="commentTable" cellspacing=0 cellpadding="2px">
+									<tr>
+										<td id="commenter" name="commenter" style="width: 10em">评论人</td>
+										<td id="comment" name="comment">评论内容</td>
+									</tr>
+							</table>
+						</form>
+					</div>
+					<div id="commentInfoFormDiv">
+						<form id="commenterInfoForm" method="get" action="">
+							<table id="commenterInfoTable">
+								<tr>
+									<td style="width: 5em">评论人：&nbsp;&nbsp;</td>
+									<td><input id="commenterName" type="text"></td>
+								</tr>
+								<tr>
+									<td>评论内容：</td>
+									<td ><textarea id="commenterText" rows="6"></textarea></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div id="commentButtonDiv">
+						<input type="button" id="commentPublic" value="发表" onclick="addComment()">
+						<input type="button" id="commentReset" value="重置" onclick="clearComment()">
+						<input type="button" id="commentDeleteFirst" value="删除第一条评论" onclick="deleteFirstComment()">
+						<input type="button" id="commentDeleteLast" value="删除最后一条评论" onclick="deleteLastComment()">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<P>Copyright@冰先生</P>
+			<P>上海交通大学</P>
+			<!--<a href="javascript:check();">
+				<P>Copyright@冰先生</P>
+			</a>
+			<a href="http://www.sjtu.edu.cn/" >上海交通大学<br></a>
+			<time pubdate datetime="2017-10-26 10:57">2017-10-26</time>-->
+		</footer>
+	</body>
+</html>
+

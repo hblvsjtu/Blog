@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用户登录</title>
+		<script type="text/javascript">
+			function check() {
+				var name=form1.user.value;
+				var pwd=form1.pwd.value;
+				if ((name=="")||(name==null)) {
+					alert("Please input your username")
+					form1.user.focus();
+					return;
+				}else if ((pwd=="")||(pwd==null)) {
+					alert("Please input your password")
+					form1.pwd.focus();
+					return;
+				}else{
+					form1.submit();
+				}
+			}
+		</script>
+	</head>
+			<body>
+				<form name="form1" method="get" action="index.html" target="_blank" >
+					<table width="350" border="1" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bordercolordark="#CCCCCC" bordercolorlight="#FFFFFF">
+						<caption>用户登陆模块</caption>
+						<tr>
+							<td width=70" height="30"  bgcolor="#eeeeee">·用户登录</td>
+						</tr>
+						<tr>
+							<td height="30">用户名：</td>
+							<td width="160"><input type="text" name="user" id="user"></td>
+						</tr>
+						<tr>
+							<td height="30">密&nbsp;&nbsp;&nbsp;码：</td>
+							<td width="162"><input type="text" name="pwd" id="pwd"></td>
+						</tr>
+						<tr>
+							<td height="30" >性别：</td>
+							<td height="30" colspan="2">
+								<select name="sex" id="sex" size="digit" >
+									<option>男生&nbsp;&nbsp;&nbsp;&nbsp;</option>
+									<option>女生&nbsp;&nbsp;&nbsp;&nbsp;</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td height="30"  colspan="2">
+								<input type="checkbox" name="checkbox1" id="checkbox1" value="Apple"> Apple&nbsp;
+								<input type="checkbox" name="checkbox1" id="checkbox1" value="Orange"> Orange&nbsp;
+								<input type="checkbox" name="checkbox1" id="checkbox1" value="Pear"> Pear&nbsp;
+								<input type="checkbox" name="checkbox1" id="checkbox1" value="Pipeapple"> Pipeapple&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td height="30" colspan="2" align="center"><input type="button" name="Button" class="btn_grey" value="登陆" onclick="check()">
+								&nbsp;
+								<input type="reset" name="Submit2" class="btn_grey" value="重置">
+							</td>
+						</tr>
+						<tr>
+							<td  colspan="2">
+						    </td>
+						</tr>
+					</table>
+				</form>
+			</body>
+</html>

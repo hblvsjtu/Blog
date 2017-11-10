@@ -1,0 +1,24 @@
+CACHE MANIFEST
+#version 1.0
+/index.html
+/CSS/style.css
+/CSS/ZhouJielun2.png
+/JavaScript/check.js
+/JavaScript/pretreatment.js
+
+NETWORK:
+handsome.html
+
+CACHE:
+#version 1.0
+index.html
+CSS/style.css
+CSS/ZhouJielun2.png
+JavaScript/pretreatment.js
+JavaScript/treatment.js
+JavaScript/worker.js
+JavaScript/fibonacci.js
+
+FALLBACK:
+login.html
+

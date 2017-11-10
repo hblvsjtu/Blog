@@ -109,7 +109,17 @@ function show_map(position){
     var longitude = position.coords.longitude;
     showObject(position,0);
 }
-
+function showRealTime() {
+    var myTime = new Date();
+    var year = myTime.getFullYear();
+    var month = myTime.getMonth();
+    var date = myTime.getDate();
+    var hour = myTime.getHours();
+    var minute = myTime.getMinutes();
+    var second = myTime.getSeconds();
+    var now = year+"年"+(month+1)+"月"+date+"日  "+hour+":"+minute+":"+second;
+    document.getElementById("myTime").innerHTML=now;
+}
 function load(){
     checkAudio();
     checkVideo();
@@ -121,5 +131,6 @@ function load(){
     document.getElementById("user").value=window.localStorage.getItem("key_username");
     document.getElementById("pwd").value=window.localStorage.getItem("key_password");
     workerMethod();
+    window.setInterval("showRealTime()",1000);
 }
 

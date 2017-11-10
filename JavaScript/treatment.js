@@ -147,11 +147,52 @@ function handleCacheError(){
 }
 
 function fibonacci() {
-    alert(document.getElementById("text_fibonacci").value);
     var work_fibonacci=new Worker("JavaScript/fibonacci.js");
     work_fibonacci.postMessage(document.getElementById("text_fibonacci").value);
     work_fibonacci.onmessage=function (e) {
         document.getElementById("result_fibonacci").value=e.data;
-        alert(e.data);
     }
 }
+
+function addComment() {
+    var commenterName = document.getElementById("commenterName");
+    var commenterText = document.getElementById("commenterText");
+    var person=document.createTextNode(commenterName.value);
+    var content=document.createTextNode(commenterText.value);
+    var td_person=document.createElement("td");
+    var td_content=document.createElement("td");
+    var tr=document.createElement("tr");
+    var tbody=document.createElement("tbody");
+    td_person.appendChild(person);
+    td_content.appendChild(content);
+    tr.appendChild(td_person);
+    tr.appendChild(td_content);
+    tbody.appendChild(tr);
+    var tComment = document.getElementById("commentTable");
+    tComment.appendChild(tbody);
+    commenterName.value="";
+    commenterText.value="";
+}
+
+function deleteFirstComment(){
+    var commenttable =document.getElementById("commentTable");
+    if(commenttable.rows.length>1){
+        commenttable.deleteRow(1);
+    }
+}
+
+function deleteLastComment(){
+    var commenttable =document.getElementById("commentTable");
+    if(commenttable.rows.length>1){
+        commenttable.deleteRow(commenttable.rows.length-1);
+    }
+}
+
+function clearComment() {
+    var commenttable = document.getElementById("commentTable");
+    var rowNum = commenttable.rows.length;
+    for (var i = 1; i < rowNum; i++) {
+        commenttable.deleteRow(1);
+    }
+}
+

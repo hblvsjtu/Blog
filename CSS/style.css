@@ -39,7 +39,7 @@
 	    padding-left:10px;
 	}
 	#container {
-		display: box;
+		/*display: box;*/
 		display: -moz-box;
 		display: -webkit-box;
 		-moz-box-align:center;
@@ -91,6 +91,19 @@
 		width: 200px;
 		height:100px;
 	}
+	#fibonacci {
+		width: 15em;
+		margin: 0em auto;
+		text-align: center;
+		line-height: 2em;
+	}
+	#fibonacci input[type="text"]{
+		width: 5em;
+		height: 1.5em;
+		text-align: center;
+		margin: 0em 0.5em;
+	}
+
 	#myNav,#myArticle,#myAside{
 		box-sizing: border-box;
 		-moz-box-sizing:border-box;
@@ -126,6 +139,108 @@
 		box-shadow: 2px 2px 10px #06C;
 		border-top-left-radius: 20px;
 	}
+	#commentContainer{
+		/*display: box;*/
+		display: -moz-box;
+		display: -webkit-box;
+	}
+		#videoArea {
+			box-ordinal-group: 1;
+			-webkit-box-ordinal-group: 1;
+			-moz-box-ordinal-group: 1;
+			width :30em;
+			margin:1em;
+		}
+		#commentArea {
+			box-ordinal-group: 2;
+			-webkit-box-ordinal-group: 2;
+			-moz-box-ordinal-group: 2;
+			box-flex: 1;
+			-webkit-box-flex: 1;
+			-moz-box-flex: 1;
+			margin:1em;
+			margin-top: 4em;
+			height: 400px;
+		}
+			#commentAreaContainer{
+				width: 100%;
+				height: 100%;
+				display: -moz-box;
+				display: -webkit-box;
+				box-align:center;
+				-webkit-box-align:center;
+				-moz-box-align:center;
+				-webkit-box-orient: vertical;
+				-moz-box-orient: vertical;
+				border-top: 0.1em;
+			}
+				#commentFormDiv{
+					box-ordinal-group: 1;
+					-webkit-box-ordinal-group: 1;
+					-moz-box-ordinal-group: 1;
+					box-flex: 1;
+					-webkit-box-flex: 1;
+					-moz-box-flex: 1;
+					text-align: center;
+					width: 90%;
+					margin: 0.1em auto;
+				}
+					#commentForm {
+						width: 100%;
+					}
+						#commentTable {
+							width: 100%;
+							border: 1px solid #eeeeee;
+						}
+							#commentTable td{
+								border: 1px solid #eeeeee;
+								line-height: 1em;
+							}
+				#commentInfoFormDiv{
+					box-ordinal-group: 2;
+					-webkit-box-ordinal-group: 2;
+					-moz-box-ordinal-group: 2;
+					height: 10em;
+					text-align: center;
+					width: 90%;
+					margin: 0.1em auto;
+					margin-top: 1em;
+				}
+					#commenterInfoForm {
+						width: 100%;
+					}
+						#commenterInfoTable{
+							width: 100%;
+							border: none;
+						}
+						#commenterInfoTable td{
+							border: none;
+						}
+						#commenterInfoTable input,textarea{
+							width: 80%;
+						}
+						#commenterInfo input{
+							line-height:0.8em ;
+						}
+						#commenterInfo textarea{
+							line-height:0.8em ;
+						}
+				#commentButtonDiv{
+					box-ordinal-group: 3;
+					-webkit-box-ordinal-group: 3;
+					-moz-box-ordinal-group: 3;
+					text-align: center;
+				}
+			#commentFormDiv,#commentInfoFormDiv,commentButtonDiv{
+				box-sizing: border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+			}
+	#videoArea,#commentArea{
+		box-sizing: border-box;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+	}
 	div img:hover{
 		-webkit-transform:rotate(30deg);
 		-moz-transform:rotate(30deg);
@@ -138,6 +253,14 @@
 		-o-transform:translate(-1em,-1em);
 	}
 	section[id^="theam_"] header:hover{
+		-webkit-transform:scale(1.2);
+		-moz-transform:scale(1.2);
+		-o-transform:scale(1.2);
+	}
+
+	#fibonacci button:hover{
+		background-color: yellow;
+		border-radius: 0.2em;
 		-webkit-transform:scale(1.2);
 		-moz-transform:scale(1.2);
 		-o-transform:scale(1.2);
